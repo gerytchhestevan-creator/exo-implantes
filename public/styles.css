@@ -154,13 +154,27 @@ body {
     position: relative;
 }
 
+/* On desktop, hero-title stacks above hero-left, both share 30% left space */
+.hero-title {
+    width: 30%;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 2rem;
+    padding-bottom: 0;
+}
+
+/* desktop-only class: visible on desktop, hidden on mobile */
+.desktop-only {
+    display: block;
+}
+
 .hero-left,
 .hero-right {
     width: 30%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-top: 2rem;
+    padding-top: 0.5rem;
     padding-bottom: 2rem;
 }
 
@@ -968,13 +982,13 @@ model-viewer {
 @media (max-width: 768px) {
     body {
         padding: 0;
-        /* PURE BLACK TOP for perfect image integration.
-           mix-blend-mode: screen needs #000 to work perfectly. */
-        background-color: #000000;
-        background-image: radial-gradient(ellipse 180% 80% at 50% 120%,
+        /* Top must be DARK where the image sits so mix-blend-mode:screen
+           dissolves the image's dark background. Orange emanates from bottom. */
+        background-color: #0a0300;
+        background-image: radial-gradient(ellipse 180% 80% at 50% 90%,
                 #8B3010 0%,
-                #3D0E04 50%,
-                #000000 90%);
+                #3D0E04 55%,
+                #0a0300 80%);
         background-attachment: scroll;
     }
 
@@ -1007,6 +1021,7 @@ model-viewer {
     }
 
     .main-title {
+        /* Controlled by .hero-title .main-title on mobile */
         font-size: 3.2rem;
         margin: 1rem 0 1rem 0;
         text-align: left;
@@ -1025,25 +1040,37 @@ model-viewer {
         margin-top: 2rem;
     }
 
-    .hero-section {
-        flex-direction: column;
+    /* Mobile hero ordering: title → image → info below */
+    .desktop-only {
+        display: none;
+    }
+
+    .hero-title {
+        width: 100%;
+        order: 1;
+        padding: 0.5rem 0 0 0;
+    }
+
+    .hero-title .main-title {
+        font-size: 3.2rem;
+        margin: 0.5rem 0;
+        line-height: 1.05;
+        letter-spacing: -1px;
+    }
+
+    .hero-center {
+        height: 380px;
+        margin: 0;
+        width: 100%;
+        order: 2;
     }
 
     .hero-left {
         align-items: flex-start;
         text-align: left;
         width: 100%;
-        order: 1;
-        /* Title first */
-        padding-top: 1.5rem;
-    }
-
-    .hero-center {
-        height: 350px;
-        margin: 2rem 0;
-        width: 100%;
-        order: 2;
-        /* Image after title */
+        order: 3;
+        padding-top: 0;
     }
 
     .hero-right {
