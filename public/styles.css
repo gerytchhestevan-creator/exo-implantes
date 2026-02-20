@@ -1,14 +1,16 @@
 :root {
-    --bg-color: #1a0f0d;
-    --bg-gradient: linear-gradient(180deg, #180d0b 0%, #2f1711 100%);
-    --bg-card: rgba(43, 21, 16, 0.4);
+    --bg-color: #d1511b;
+    /* Vibrant Denta Orange base */
+    --bg-gradient: linear-gradient(180deg, #e65a10 0%, #aa3b10 100%);
+    --bg-card: #e65a10;
+    /* Solid orange background for cards */
     --text-main: #ffffff;
-    --text-muted: rgba(255, 255, 255, 0.5);
-    --accent-color: #FFAA77;
-    /* Soft glow orange */
-    --accent-glow: radial-gradient(circle, rgba(255, 170, 119, 0.25) 0%, rgba(255, 80, 0, 0) 70%);
-    --btn-border: rgba(255, 255, 255, 0.15);
-    --border-color: rgba(255, 255, 255, 0.08);
+    --text-muted: rgba(255, 255, 255, 0.85);
+    --accent-color: #ffffff;
+    /* Use white accents instead of orange on orange */
+    --accent-glow: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 70%);
+    --btn-border: #ffffff;
+    --border-color: rgba(255, 255, 255, 0.3);
     --font-main: 'Outfit', sans-serif;
 }
 
@@ -20,7 +22,11 @@
 
 body {
     font-family: var(--font-main);
-    background-color: #1a0f0d;
+    background-color: var(--bg-color);
+    /* Fallback to the orange */
+    background-image: var(--bg-gradient);
+    /* Enforce gradient on root */
+    background-attachment: fixed;
     color: var(--text-main);
     min-height: 100vh;
     display: flex;
@@ -30,13 +36,14 @@ body {
 }
 
 .app-container {
-    background: var(--bg-color);
+    background: transparent;
+    /* Remove internal container background to show root body */
     width: 100%;
     max-width: 1600px;
     height: auto;
     min-height: 90vh;
     border-radius: 40px;
-    border: 1px solid var(--border-color);
+    border: none;
     display: flex;
     flex-direction: column;
     padding: 2.5rem 4rem;
@@ -52,7 +59,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 50% 10%, rgba(255, 120, 50, 0.05) 0%, transparent 60%);
+    background: radial-gradient(circle at 50% 10%, rgba(255, 255, 255, 0.15) 0%, transparent 50%);
     pointer-events: none;
     z-index: 0;
 }
@@ -114,23 +121,24 @@ body {
 }
 
 .btn-outline {
-    border: 1px solid var(--btn-border);
-    background: transparent;
-    color: var(--text-main);
+    background: #ffffff;
+    color: var(--bg-color);
+    /* Inverse for white button */
+    border: none;
     padding: 10px 24px;
-    border-radius: 12px;
+    border-radius: 8px;
     font-family: var(--font-main);
     font-size: 0.95rem;
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .btn-outline:hover {
-    background: #fff;
-    color: #1a0f0d;
+    background: #f0f0f0;
     transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* HERO SECTION */
@@ -176,12 +184,11 @@ body {
 .main-title {
     font-size: 5.5rem;
     font-weight: 500;
-    line-height: 1.05;
+    line-height: 1;
     letter-spacing: -2px;
     margin: 2rem 0;
-    background: linear-gradient(180deg, #FFFFFF 0%, #D8C3BC 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #ffffff;
+    /* Solid white for Denta theme */
 }
 
 /* 3D IMPLANT */
@@ -207,9 +214,9 @@ body {
 
 .glow-effect {
     position: absolute;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(230, 90, 20, 0.35) 0%, rgba(200, 50, 0, 0.15) 30%, transparent 65%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.1) 30%, transparent 65%);
     top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -384,7 +391,7 @@ body {
 }
 
 .content-section.bg-dark {
-    background: var(--bg-card);
+    background: transparent;
     margin: 0 -4rem;
     padding: 6rem 4rem;
     border-top: 1px solid var(--border-color);
@@ -452,16 +459,17 @@ body {
 }
 
 .stat-box {
-    background: var(--bg-card);
+    background: transparent;
     padding: 2.5rem;
     border-radius: 24px;
     border: 1px solid var(--border-color);
-    transition: transform 0.3s ease, border-color 0.3s;
+    transition: transform 0.3s ease, border-color 0.3s, background 0.3s;
 }
 
 .stat-box:hover {
     transform: translateY(-5px);
-    border-color: rgba(255, 170, 119, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.6);
 }
 
 .stat-number {
@@ -489,16 +497,17 @@ body {
 }
 
 .product-card {
-    background: var(--bg-card);
+    background: transparent;
     padding: 2.5rem 2rem;
     border-radius: 24px;
     border: 1px solid var(--border-color);
-    transition: transform 0.3s, border-color 0.3s;
+    transition: transform 0.3s, border-color 0.3s, background 0.3s;
 }
 
 .product-card:hover {
     transform: translateY(-5px);
-    border-color: rgba(255, 170, 133, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.6);
 }
 
 .icon-wrap {
@@ -628,8 +637,8 @@ body {
     left: -3rem;
     width: 50px;
     height: 50px;
-    background: var(--bg-color);
-    border: 2px solid var(--accent-color);
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid white;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -637,22 +646,26 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     color: white;
-    box-shadow: 0 0 15px rgba(255, 122, 77, 0.3);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
     z-index: 2;
+    backdrop-filter: blur(5px);
 }
 
 .step-content {
-    background: var(--bg-card);
+    background: transparent;
     padding: 2rem;
     border-radius: 20px;
     border: 1px solid var(--border-color);
-    border-left: 3px solid var(--accent-color);
+    border-left: 3px solid white;
     width: 100%;
-    transition: transform 0.3s;
+    transition: transform 0.3s, background 0.3s;
+    margin-left: 1rem;
+    /* Detach cards from timeline */
 }
 
 .step-content:hover {
     transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .step-content h4 {
