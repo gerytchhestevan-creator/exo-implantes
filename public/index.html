@@ -1,89 +1,463 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="pt-BR">
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/12.9.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/12.9.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/12.9.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/12.9.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/12.9.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/12.9.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/12.9.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/12.9.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/12.9.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/12.9.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo Implante | Estruturas de Titânio Customizadas</title>
+    <meta name="description"
+        content="Exo Implantes - Sistema inovador para estruturas de titânio customizadas para odontologia e medicina.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+</head>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+<body>
+    <div class="app-container">
+        <!-- HEADER -->
+        <header class="navbar">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="9" height="9" rx="2" fill="white" />
+                    <rect x="2" y="13" width="9" height="9" rx="2" fill="white" />
+                    <rect x="13" y="2" width="9" height="9" rx="2" fill="white" />
+                    <path d="M13 15C13 13.8954 13.8954 13 15 13H22V22H15C13.8954 22 13 21.1046 13 20V15Z"
+                        fill="white" />
+                </svg>
+                <span>Exo Implante</span>
+            </div>
+
+            <nav class="nav-links">
+                <a href="#sobre">Sobre o Negócio</a>
+                <a href="#beneficios">Benefícios</a>
+                <a href="#processo">Processo</a>
+                <a href="#faq">Dúvidas Frequentes</a>
+                <a href="#produtos">Produtos</a>
+                <a href="#contato">Contato</a>
+            </nav>
+
+            <a href="https://wa.me/5521972452936" class="btn-outline" target="_blank" rel="noopener noreferrer">Fale
+                Conosco</a>
+        </header>
+
+        <!-- MAIN HERO -->
+        <main class="hero-section">
+            <div class="hero-left">
+                <p class="subtitle">Desde a concepção até a prototipagem completa,<br>um sistema inovador em titânio
+                    customizado.</p>
+                <h1 class="main-title">Excelência<br>em Estruturas<br>de Titânio</h1>
+
+                <div class="bottom-info left-info">
+                    <p class="label">Responsável</p>
+                    <p class="value">Ricardo Von Marchendorf Coutinho<br>37 Anos de Experiência (IME)</p>
+                </div>
+            </div>
+
+            <div class="hero-center">
+                <div class="implant-wrapper">
+                    <img src="./assets/implant_3d.png" alt="Implante 3D em Titânio" class="implant-img"
+                        id="mainImplant">
+                    <div class="glow-effect"></div>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <p class="subtitle right-align">Conheça nosso processo de exoesqueletos fundidos, usinados e
+                    prototipados em impressora 3D.</p>
+
+                <div class="team-carousel">
+                    <div class="carousel-header">
+                        <span class="label">Produtos</span>
+                        <div class="carousel-nav">
+                            <button class="nav-btn prev">&lt;</button>
+                            <button class="nav-btn next">&gt;</button>
+                        </div>
+                    </div>
+
+                    <div class="cards-container">
+                        <div class="card" onclick="open3DModal()">
+                            <img src="./assets/p1.jpeg" alt="Exoesqueleto Customizado" class="card-img">
+                            <div class="card-info">
+                                <h4>Customizados</h4>
+                                <p>Estrutura sob medida</p>
+                            </div>
+                        </div>
+                        <div class="card" style="display:none;" onclick="open3DModal()">
+                            <img src="./assets/p2.jpeg" alt="Estrutura de Titânio" class="card-img">
+                            <div class="card-info">
+                                <h4>Titânio Grau 5</h4>
+                                <p>Alta resistência e precisão</p>
+                            </div>
+                        </div>
+                        <div class="card" style="display:none;" onclick="open3DModal()">
+                            <img src="./assets/p3.jpeg" alt="Encaixe Perfeito" class="card-img">
+                            <div class="card-info">
+                                <h4>Encaixe Perfeito</h4>
+                                <p>Subperiosteal (EXO)</p>
+                            </div>
+                        </div>
+                        <div class="card" style="display:none;" onclick="open3DModal()">
+                            <img src="./assets/p4.jpeg" alt="Integração" class="card-img">
+                            <div class="card-info">
+                                <h4>Integração Óssea</h4>
+                                <p>Geometria otimizada</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bottom-info right-info">
+                    <p class="label">Localização</p>
+                    <p class="value">Rio de Janeiro<br>Teresópolis</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- SOBRE O NEGÓCIO -->
+        <section id="sobre" class="content-section">
+            <div class="section-container">
+                <h2 class="section-title">Sobre o Negócio</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>A <strong>Exo Implantes</strong> é especializada em <strong>Implantes Subperiosteais
+                                (EXO)</strong>. Diferente dos convencionais, nossas estruturas "abraçam" o osso
+                            remanescente, sendo a infraestrutura perfeita para pacientes com perda óssea severa.</p>
+                        <p>Utilizamos a elite dos metais biomédicos, o <strong>Titânio Grau 5 (Ti-6Al-4V)</strong>. Cada
+                            peça é criada com <strong>Personalização Anatômica (Custom-made)</strong> a partir de
+                            tomografias de crânios, proporcionando um encaixe perfeito, redução no tempo cirúrgico e
+                            alta previsibilidade.</p>
+                        <p>Com mais de <strong>37 anos de atuação</strong>, o responsável, <strong>Ricardo Von
+                                Marchendorf Coutinho</strong>, lidera nossa engenharia de excelência. Sua formação em
+                            Engenharia de Materiais pelo Instituto Militar de Engenharia (IME) garante o mais alto rigor
+                            técnico e científico desenvolvido.
+                        </p>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-box">
+                            <span class="stat-number">37+</span>
+                            <span class="stat-label">Anos de Experiência</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">IME</span>
+                            <span class="stat-label">Engenharia de Materiais</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BENEFÍCIOS -->
+        <section id="beneficios" class="content-section bg-dark">
+            <div class="section-container">
+                <h2 class="section-title" style="text-align: center;">Por que Escolher a Exo Implantes?</h2>
+                <p class="section-subtitle" style="text-align: center; margin: 0 auto 4rem auto;">Vantagens clínicas
+                    incomparáveis para seus pacientes e previsibilidade absoluta para sua cirurgia.</p>
+
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 2v20"></path>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <h4>0 Necessidade de Enxerto</h4>
+                        <p>Estruturas projetadas para "abraçar" o osso remanescente, ideal para perdas ósseas severas.
+                        </p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <h4>Tempo Cirúrgico Reduzido</h4>
+                        <p>Encaixe micrométrico e personalização anatômica (Custom-made) que agilizam a cirurgia.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <h4>Biocompatibilidade Extrema</h4>
+                        <p>Uso de Titânio Grau 5 (Ti-6Al-4V) - a elite biomédica - leve, inquebrável e imune à corrosão.
+                        </p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <circle cx="12" cy="12" r="6"></circle>
+                                <circle cx="12" cy="12" r="2"></circle>
+                            </svg>
+                        </div>
+                        <h4>Previsibilidade Cirúrgica</h4>
+                        <p>Concepção totalmente digital baseada na tomografia do paciente antes da fabricação iniciar.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMO FUNCIONA (LINHA DO TEMPO) -->
+        <section id="processo" class="content-section">
+            <div class="section-container">
+                <h2 class="section-title">Como Funciona Nosso Processo?</h2>
+                <p class="section-subtitle">A união da precisão odontológica com a mais alta engenharia de materiais em
+                    4 etapas claras.</p>
+
+                <div class="timeline-container">
+                    <div class="timeline-step">
+                        <div class="step-dot">1</div>
+                        <div class="step-content">
+                            <h4>Diagnóstico e Tomografia</h4>
+                            <p>O paciente realiza a tomografia computadorizada, que fundamentará o projeto 3D.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-dot">2</div>
+                        <div class="step-content">
+                            <h4>Planejamento Digital e Aprovação</h4>
+                            <p>A Exo recebe o caso, cria o design "Custom-made" para aprovação do cirurgião.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-dot">3</div>
+                        <div class="step-content">
+                            <h4>Trindade Tecnológica</h4>
+                            <p>A peça é impressa em 3D, usinada meticulosamente (CNC) e finalizada em fundição sob
+                                argônio.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-dot">4</div>
+                        <div class="step-content">
+                            <h4>Entrega e Cirurgia</h4>
+                            <p>A exoestrutura é enviada esterilizada e pronta. O cirurgião apenas realiza o assentamento
+                                e a fixação.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="content-section bg-dark">
+            <div class="section-container">
+                <h2 class="section-title" style="text-align: center;">Dúvidas Frequentes</h2>
+                <p class="section-subtitle" style="text-align: center; margin: 0 auto 4rem auto;">Respostas rápidas
+                    sobre a tecnologia de Implantes Subperiosteais (EXO).</p>
+
+                <div class="faq-container">
+                    <details class="faq-item">
+                        <summary>O que são os Implantes Subperiosteais (EXO)?</summary>
+                        <div class="faq-content">
+                            <p>São infraestruturas de titânio desenhadas sob medida que se apoiam sobre o osso
+                                remanescente do paciente, sob a gengiva (periósteo). Eles eliminam a necessidade de
+                                enxertos ósseos complexos, sendo a solução ideal para reabilitações em maxilares com
+                                atrofia severa.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Qual o prazo médio de entrega?</summary>
+                        <div class="faq-content">
+                            <p>Após a aprovação do planejamento digital 3D pelo cirurgião, o processo de impressão,
+                                usinagem CNC e fundição sob argônio leva em média de 7 a 10 dias úteis para a estrutura
+                                ser enviada estéril e pronta para a cirurgia.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Por que o Titânio Grau 5 (Ti-6Al-4V) é o melhor material?</summary>
+                        <div class="faq-content">
+                            <p>O Titânio Grau 5 proporciona a melhor relação de força-peso entre todos os metais
+                                biomédicos. Ele é extremamente leve, incrivelmente resistente a fraturas e 100%
+                                resistente à corrosão corpórea, o que garante longevidade e altíssima compatibilidade
+                                biológica, evitando rejeições.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Em quais casos essa tecnologia é mais recomendada?</summary>
+                        <div class="faq-content">
+                            <p>O EXO Implante é indicado sobretudo para pacientes enedentados (sem dentes) que sofreram
+                                perda óssea maciça e que teriam que passar por diversas e dolorosas cirurgias de enxerto
+                                ósseo antes de poder colocar implantes convencionais tipo pino.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Como a "Trindade Tecnológica" beneficia o encaixe cirúrgico?</summary>
+                        <div class="faq-content">
+                            <p>Nossa união única de Impressão 3D para formas orgânicas, aliada à Usinagem CNC, garante
+                                que os pinos de apoio para as futuras próteses dentárias sejam micrometricamente
+                                precisos, sem nenhuma folga, o que facilita o trabalho do protesista e reduz muito o
+                                tempo de sessão.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUTOS -->
+        <section id="produtos" class="content-section">
+            <div class="section-container">
+                <h2 class="section-title">Nossos Produtos</h2>
+                <p class="section-subtitle">Domínio da Trindade Tecnológica: Integração rara na fabricação de peças para
+                    o público mais exigente da odontologia.</p>
+
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="icon-wrap">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 2v20"></path>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <h3>Fundição sob Argônio</h3>
+                        <p>Técnica refinada para garantir que o metal não sofra contaminação por oxigênio, mantendo a
+                            pureza do titânio impecável.</p>
+                    </div>
+                    <div class="product-card">
+                        <div class="icon-wrap">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3>Subtrativa (Usinagem CNC)</h3>
+                        <p>Garante que os pontos de conexão com os dentes tenham um ajuste micrométrico perfeito,
+                            totalmente sem folgas.</p>
+                    </div>
+                    <div class="product-card">
+                        <div class="icon-wrap">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                                </path>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg>
+                        </div>
+                        <h3>Aditiva (Impressão 3D)</h3>
+                        <p>Permite criar geometrias orgânicas e porosas em metal que facilitam extraordinariamente a
+                            integração com o tecido humano.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PÚBLICO ALVO & MAPA -->
+        <section id="publico" class="content-section">
+            <div class="section-container">
+                <div class="target-grid">
+                    <div class="target-info">
+                        <h2 class="section-title">Público-Alvo e Missão</h2>
+                        <ul class="target-list">
+                            <li>Cirurgiões Dentistas e Buco-maxilos</li>
+                            <li>Implantodontistas e Ortodontistas</li>
+                            <li>Cirurgiões Médicos</li>
+                            <li>Clínicas de Alto Padrão e Franquias Odontológicas</li>
+                            <li>Faculdades, Institutos de Odontologia e Empresas</li>
+                            <li>Pacientes Mulheres</li>
+                        </ul>
+                        <p class="target-para">Nosso objetivo é vender, entregar qualidade, demonstrar presença
+                            profissional e facilitar o acesso através da marcação de nossos filiados no mapa.</p>
+                    </div>
+                    <div class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117562.90382357732!2d-43.08053648174522!3d-22.44960309191945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x98555e09de2af3%3A0x6bba59be3fc4eb18!2sTeres%C3%B3polis%2C%20RJ!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
+                            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER / LINKS -->
+        <footer id="contato" class="site-footer">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="logo">Exo Implante</div>
+                    <a href="https://wa.me/5521972452936" class="btn-whatsapp" target="_blank"
+                        rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                            fill="currentColor" style="margin-right: 8px;">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+                        </svg>
+                        Falar no WhatsApp
+                    </a>
+                    <div class="social-links">
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Links Úteis</h4>
+                    <div class="useful-links">
+                        <a href="https://www.cro-rj.org.br/" target="_blank" rel="noopener noreferrer">CRO-RJ</a>
+                        <a href="https://website.cfo.org.br/" target="_blank" rel="noopener noreferrer">CFO</a>
+                        <a href="https://www.gov.br/anvisa/pt-br" target="_blank" rel="noopener noreferrer">ANVISA</a>
+                        <a href="https://www.instagram.com/proteseclub/" target="_blank"
+                            rel="noopener noreferrer">Proteseclub</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">Nossa Escola</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Exo Implante. Desenvolvido para Teresópolis / RJ.</p>
+            </div>
+        </footer>
+
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+    <!-- 3D Modal Overlay -->
+    <div id="modelModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal" onclick="close3DModal()">&times;</button>
+            <div class="model-container">
+                <h3 style="color:var(--text-main); margin-bottom: 1rem; text-align: center;">Visualizador 3D (Aguardando
+                    Arquivo)
+                </h3>
+                <div
+                    style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; border: 2px dashed rgba(255, 122, 77, 0.3); border-radius: 12px; padding: 2rem;">
+                    <img src="./assets/implant_3d.png" alt="Implante Placeholder"
+                        style="width: 200px; opacity: 0.5; margin-bottom: 2rem;">
+                    <h4 style="color: var(--accent-color); font-size: 1.5rem; text-align: center; margin-bottom: 1rem;">
+                        Modelo 3D ausente</h4>
+                    <p style="text-align: center; color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">
+                        Para habilitar a interação 3D real nesta tela, é necessário substituir o placeholder pelo
+                        arquivo CAD do seu Exoesqueleto.<br><br>
+                        Por favor, me envie ou faça o upload de um arquivo <strong>.glb</strong> ou
+                        <strong>.gltf</strong> do projeto.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+    <script src="script.js"></script>
+</body>
+
 </html>
