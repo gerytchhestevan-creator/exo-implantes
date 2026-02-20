@@ -905,3 +905,93 @@ model-viewer {
 .card {
     cursor: pointer;
 }
+
+/* Mobile Polish */
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+        background: var(--bg-gradient);
+    }
+    
+    .app-container {
+        border-radius: 0;
+        padding: 1.5rem;
+        min-height: 100vh;
+        margin: 0;
+        box-shadow: none;
+    }
+    
+    .navbar {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .main-title {
+        font-size: 2.8rem;
+        margin: 1.5rem 0;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .hero-left, .hero-right {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .right-align {
+        align-self: center;
+    }
+    
+    .hero-center {
+        height: 350px;
+    }
+    
+    .content-section {
+        padding: 4rem 0;
+    }
+    
+    .content-section.bg-dark {
+        margin: 0 -1.5rem;
+        padding: 4rem 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+    
+    .section-subtitle {
+        text-align: center;
+    }
+    
+    .stat-number {
+        font-size: 3rem;
+    }
+    
+    .stat-box {
+        padding: 1.5rem;
+    }
+    
+    .product-card {
+        padding: 2rem 1.5rem;
+        text-align: center;
+    }
+    
+    .footer-container {
+        text-align: center;
+    }
+    
+    .social-links, .useful-links {
+        justify-content: center;
+    }
+}
