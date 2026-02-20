@@ -1,9 +1,9 @@
 :root {
-    --bg-color: #8c2a0f;
-    --bg-gradient: radial-gradient(circle at 50% 50%, #b23a18 0%, #681d09 60%, #2f0b03 100%);
+    --bg-color: #c74516;
+    --bg-gradient: radial-gradient(circle at 50% 30%, #db5016 0%, #7d1c04 40%, #150300 100%);
     --text-main: #ffffff;
-    --text-muted: rgba(255, 255, 255, 0.65);
-    --accent-color: #ff7a4d;
+    --text-muted: rgba(255, 255, 255, 0.7);
+    --accent-color: #ffaa85;
     --btn-border: rgba(255, 255, 255, 0.3);
     --font-main: 'Outfit', sans-serif;
 }
@@ -93,7 +93,7 @@ body {
     background: transparent;
     color: var(--text-main);
     padding: 10px 24px;
-    border-radius: 8px;
+    border-radius: 12px;
     font-family: var(--font-main);
     font-size: 0.95rem;
     font-weight: 500;
@@ -103,7 +103,8 @@ body {
 }
 
 .btn-outline:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: #fff;
+    color: #1a0f0d;
     transform: translateY(-2px);
 }
 
@@ -149,9 +150,9 @@ body {
 
 .main-title {
     font-size: 5rem;
-    font-weight: 400;
-    line-height: 1.1;
-    letter-spacing: -2px;
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
     margin: 3rem 0;
 }
 
@@ -178,14 +179,14 @@ body {
 
 .glow-effect {
     position: absolute;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(255, 200, 100, 0.2) 0%, rgba(255, 100, 50, 0) 70%);
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, rgba(255, 200, 100, 0.1) 40%, rgba(255, 100, 50, 0) 70%);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
-    filter: blur(20px);
+    filter: blur(25px);
 }
 
 @keyframes float {
@@ -365,10 +366,11 @@ body {
 }
 
 .section-title {
-    font-size: 3rem;
-    font-weight: 400;
-    margin-bottom: 2rem;
+    font-size: 2.8rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
     letter-spacing: -1px;
+    line-height: 1.2;
 }
 
 .section-subtitle {
@@ -460,18 +462,18 @@ body {
 }
 
 .product-card {
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
-    padding: 3rem 2rem;
-    border-radius: 20px;
+    background: linear-gradient(145deg, rgba(30, 10, 5, 0.8) 0%, rgba(15, 5, 2, 0.9) 100%);
+    padding: 2.5rem 2rem;
+    border-radius: 24px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     transition: transform 0.3s, background 0.3s, border-color 0.3s;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
 }
 
 .product-card:hover {
     transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 122, 77, 0.4);
+    background: rgba(40, 15, 8, 0.9);
+    border-color: rgba(255, 170, 133, 0.4);
 }
 
 .icon-wrap {
@@ -912,86 +914,138 @@ model-viewer {
         padding: 0;
         background: var(--bg-gradient);
     }
-    
+
     .app-container {
         border-radius: 0;
-        padding: 1.5rem;
+        padding: 1.5rem 1.2rem;
         min-height: 100vh;
         margin: 0;
         box-shadow: none;
     }
-    
+
     .navbar {
-        flex-direction: column;
-        gap: 1.5rem;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 1rem;
     }
-    
+
+    .logo {
+        font-size: 1.25rem;
+    }
+
     .nav-links {
-        gap: 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
+        display: none;
+        /* Hide heavy menu on mobile */
     }
-    
+
+    .btn-outline {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+
     .main-title {
-        font-size: 2.8rem;
-        margin: 1.5rem 0;
+        font-size: 3.2rem;
+        margin: 1rem 0 1.5rem 0;
+        text-align: left;
+        line-height: 1.05;
+        letter-spacing: -1px;
     }
-    
+
     .subtitle {
-        font-size: 1rem;
+        font-size: 1.05rem;
         max-width: 100%;
-        text-align: center;
+        text-align: left;
+        line-height: 1.5;
     }
-    
-    .hero-left, .hero-right {
-        align-items: center;
-        text-align: center;
+
+    .hero-left,
+    .hero-right {
+        align-items: flex-start;
+        text-align: left;
+        width: 100%;
     }
-    
+
+    .hero-right .subtitle {
+        margin-top: 1rem;
+    }
+
     .right-align {
-        align-self: center;
+        align-self: flex-start;
     }
-    
+
     .hero-center {
-        height: 350px;
+        height: 380px;
+        margin: 1rem 0;
     }
-    
+
+    /* Fixed Image padding in Sobre o Negócio */
+    .about-text p {
+        padding-left: 0;
+        margin-bottom: 1.5rem;
+    }
+
+    .about-text p::before {
+        display: none;
+        /* Hide orange left bar on mobile to save space */
+    }
+
     .content-section {
         padding: 4rem 0;
     }
-    
+
     .content-section.bg-dark {
-        margin: 0 -1.5rem;
-        padding: 4rem 1.5rem;
+        margin: 0 -1.2rem;
+        padding: 4rem 1.2rem;
+        border-radius: 20px;
     }
-    
+
     .section-title {
         font-size: 2.2rem;
-        text-align: center;
+        text-align: left;
+        line-height: 1.1;
     }
-    
+
     .section-subtitle {
-        text-align: center;
+        text-align: left;
+        margin-bottom: 2.5rem;
     }
-    
+
     .stat-number {
-        font-size: 3rem;
+        font-size: 3.5rem;
     }
-    
+
     .stat-box {
-        padding: 1.5rem;
+        padding: 1.8rem;
+        border-radius: 20px;
     }
-    
+
     .product-card {
         padding: 2rem 1.5rem;
-        text-align: center;
+        text-align: left;
     }
-    
+
     .footer-container {
-        text-align: center;
+        text-align: left;
+        flex-direction: column;
+        gap: 2rem;
     }
-    
-    .social-links, .useful-links {
+
+    .social-links,
+    .useful-links {
+        justify-content: flex-start;
+    }
+
+    .bottom-info,
+    .left-info,
+    .right-info {
+        text-align: left !important;
+    }
+
+    .btn-whatsapp {
+        width: 100%;
         justify-content: center;
+        padding: 16px;
+        font-size: 1.15rem;
+        border-radius: 14px;
     }
 }
