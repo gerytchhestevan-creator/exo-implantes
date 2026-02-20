@@ -674,7 +674,11 @@ body {
 }
 
 @media (max-width: 768px) {
-    .benefits-grid {
+
+    .benefits-grid,
+    .about-grid,
+    .products-grid,
+    .target-grid {
         grid-template-columns: 1fr;
     }
 
@@ -691,6 +695,8 @@ body {
 
     .step-content {
         padding: 1.5rem;
+        margin-bottom: 1rem;
+        /* Descolar card dos números e dar respiro */
     }
 }
 
@@ -971,7 +977,7 @@ model-viewer {
 
     .main-title {
         font-size: 3.2rem;
-        margin: 1rem 0 1.5rem 0;
+        margin: 1rem 0 1rem 0;
         text-align: left;
         line-height: 1.05;
         letter-spacing: -1px;
@@ -984,24 +990,32 @@ model-viewer {
         line-height: 1.5;
     }
 
-    .hero-left,
-    .hero-right {
+    .mt-mobile {
+        margin-top: 2rem;
+    }
+
+    .hero-section {
+        flex-direction: column;
+    }
+
+    .hero-left {
         align-items: flex-start;
         text-align: left;
         width: 100%;
-    }
-
-    .hero-right .subtitle {
-        margin-top: 1rem;
-    }
-
-    .right-align {
-        align-self: flex-start;
+        order: 1;
     }
 
     .hero-center {
         height: 380px;
-        margin: 1rem 0;
+        margin: 2rem 0;
+        order: 2;
+    }
+
+    .hero-right {
+        align-items: flex-start;
+        text-align: left;
+        width: 100%;
+        order: 3;
     }
 
     /* Fixed Image padding in Sobre o Negócio */
