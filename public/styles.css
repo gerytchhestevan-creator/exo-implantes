@@ -968,13 +968,13 @@ model-viewer {
 @media (max-width: 768px) {
     body {
         padding: 0;
-        /* Darker, more uniform background on mobile so mix-blend-mode:screen works
-           and the image integrates without a black box showing */
-        background-color: #0e0503;
-        background-image: radial-gradient(ellipse 150% 60% at 50% 25%,
+        /* Top must be DARK where the image sits so mix-blend-mode:screen
+           dissolves the image's dark background. Orange emanates from bottom. */
+        background-color: #0a0300;
+        background-image: radial-gradient(ellipse 180% 80% at 50% 90%,
                 #8B3010 0%,
-                #3D0E04 50%,
-                #0e0503 100%);
+                #3D0E04 55%,
+                #0a0300 80%);
         background-attachment: scroll;
     }
 
@@ -1030,10 +1030,9 @@ model-viewer {
     }
 
     .hero-center {
-        height: 360px;
-        margin: 0 -1.2rem;
-        /* Stretch to full phone width */
-        width: calc(100% + 2.4rem);
+        height: 380px;
+        margin: 0;
+        width: 100%;
         order: 1;
         /* Image at the very top */
     }
