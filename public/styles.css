@@ -1,16 +1,22 @@
 :root {
-    --bg-color: #d1511b;
-    /* Vibrant Denta Orange base */
-    --bg-gradient: linear-gradient(180deg, #e65a10 0%, #aa3b10 100%);
-    --bg-card: #e65a10;
-    /* Solid orange background for cards */
+    /* Denta-inspired palette: very dark warm background + radial orange spotlight */
+    --bg-dark: #0e0503;
+    /* The deepest dark base */
+    --bg-mid: #1c0a04;
+    /* Mid warm maroon */
+    --orange-core: #C94B1A;
+    /* Burnt orange for the glow */
+    --bg-gradient: radial-gradient(ellipse 120% 100% at 50% -5%,
+            #C94B1A 0%,
+            #6B1D08 40%,
+            #0e0503 80%);
+    --bg-card: rgba(255, 255, 255, 0.06);
     --text-main: #ffffff;
-    --text-muted: rgba(255, 255, 255, 0.85);
-    --accent-color: #ffffff;
-    /* Use white accents instead of orange on orange */
-    --accent-glow: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 70%);
-    --btn-border: #ffffff;
-    --border-color: rgba(255, 255, 255, 0.3);
+    --text-muted: rgba(255, 255, 255, 0.55);
+    --accent-color: #E8682E;
+    /* Vivid accent orange for highlights */
+    --btn-border: rgba(255, 255, 255, 0.2);
+    --border-color: rgba(255, 255, 255, 0.12);
     --font-main: 'Outfit', sans-serif;
 }
 
@@ -22,10 +28,8 @@
 
 body {
     font-family: var(--font-main);
-    background-color: var(--bg-color);
-    /* Fallback to the orange */
+    background-color: var(--bg-dark);
     background-image: var(--bg-gradient);
-    /* Enforce gradient on root */
     background-attachment: fixed;
     color: var(--text-main);
     min-height: 100vh;
@@ -51,7 +55,7 @@ body {
     overflow: hidden;
 }
 
-/* Background Texture / Glow Overlay */
+/* Background Texture / Subtle vignette */
 .app-container::before {
     content: '';
     position: absolute;
@@ -59,7 +63,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 50% 10%, rgba(255, 255, 255, 0.15) 0%, transparent 50%);
+    background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(255, 255, 255, 0.06) 0%, transparent 70%);
     pointer-events: none;
     z-index: 0;
 }
@@ -121,25 +125,25 @@ body {
 }
 
 .btn-outline {
-    background: #ffffff;
-    color: var(--bg-color);
-    /* Inverse for white button */
-    border: none;
+    border: 1px solid var(--btn-border);
+    background: transparent;
+    color: var(--text-main);
     padding: 10px 24px;
     border-radius: 8px;
     font-family: var(--font-main);
     font-size: 0.95rem;
-    font-weight: 600;
+    font-weight: 500;
     cursor: pointer;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .btn-outline:hover {
-    background: #f0f0f0;
+    background: rgba(255, 255, 255, 0.1);
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
+
+
 
 /* HERO SECTION */
 .hero-section {
@@ -212,16 +216,20 @@ body {
     animation: float 6s ease-in-out infinite;
 }
 
+/* The glowing orange halo behind the 3D implant */
 .glow-effect {
     position: absolute;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.1) 30%, transparent 65%);
-    top: 45%;
+    width: 550px;
+    height: 550px;
+    background: radial-gradient(circle,
+            rgba(255, 130, 40, 0.7) 0%,
+            rgba(200, 70, 15, 0.4) 35%,
+            transparent 70%);
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
-    filter: blur(40px);
+    filter: blur(35px);
     border-radius: 50%;
 }
 
@@ -459,17 +467,18 @@ body {
 }
 
 .stat-box {
-    background: transparent;
+    background: var(--bg-card);
     padding: 2.5rem;
     border-radius: 24px;
     border: 1px solid var(--border-color);
+    backdrop-filter: blur(12px);
     transition: transform 0.3s ease, border-color 0.3s, background 0.3s;
 }
 
 .stat-box:hover {
     transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent-color);
 }
 
 .stat-number {
@@ -497,17 +506,18 @@ body {
 }
 
 .product-card {
-    background: transparent;
+    background: var(--bg-card);
     padding: 2.5rem 2rem;
     border-radius: 24px;
     border: 1px solid var(--border-color);
+    backdrop-filter: blur(12px);
     transition: transform 0.3s, border-color 0.3s, background 0.3s;
 }
 
 .product-card:hover {
     transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--accent-color);
 }
 
 .icon-wrap {
@@ -577,17 +587,19 @@ body {
 }
 
 .benefit-card {
-    background: rgba(0, 0, 0, 0.3);
+    background: var(--bg-card);
     padding: 2.5rem 2rem;
     border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
     text-align: center;
-    transition: transform 0.3s;
+    backdrop-filter: blur(12px);
+    transition: transform 0.3s, border-color 0.3s;
 }
 
 .benefit-card:hover {
     transform: translateY(-10px);
-    border-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .benefit-icon {
@@ -637,8 +649,8 @@ body {
     left: -3rem;
     width: 50px;
     height: 50px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid white;
+    background: rgba(201, 75, 26, 0.4);
+    border: 2px solid var(--accent-color);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -646,7 +658,7 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     color: white;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 20px rgba(201, 75, 26, 0.5);
     z-index: 2;
     backdrop-filter: blur(5px);
 }
@@ -957,7 +969,8 @@ model-viewer {
 @media (max-width: 768px) {
     body {
         padding: 0;
-        background: var(--bg-color);
+        background-color: var(--bg-dark);
+        background-image: var(--bg-gradient);
     }
 
     .app-container {
