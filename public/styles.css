@@ -968,13 +968,13 @@ model-viewer {
 @media (max-width: 768px) {
     body {
         padding: 0;
-        /* Top must be DARK where the image sits so mix-blend-mode:screen
-           dissolves the image's dark background. Orange emanates from bottom. */
-        background-color: #0a0300;
-        background-image: radial-gradient(ellipse 180% 80% at 50% 90%,
+        /* PURE BLACK TOP for perfect image integration.
+           mix-blend-mode: screen needs #000 to work perfectly. */
+        background-color: #000000;
+        background-image: radial-gradient(ellipse 180% 80% at 50% 120%,
                 #8B3010 0%,
-                #3D0E04 55%,
-                #0a0300 80%);
+                #3D0E04 50%,
+                #000000 90%);
         background-attachment: scroll;
     }
 
@@ -1029,20 +1029,21 @@ model-viewer {
         flex-direction: column;
     }
 
-    .hero-center {
-        height: 380px;
-        margin: 0;
-        width: 100%;
-        order: 1;
-        /* Image at the very top */
-    }
-
     .hero-left {
         align-items: flex-start;
         text-align: left;
         width: 100%;
-        order: 2;
+        order: 1;
+        /* Title first */
         padding-top: 1.5rem;
+    }
+
+    .hero-center {
+        height: 350px;
+        margin: 2rem 0;
+        width: 100%;
+        order: 2;
+        /* Image after title */
     }
 
     .hero-right {
