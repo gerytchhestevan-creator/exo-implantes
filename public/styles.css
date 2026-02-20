@@ -6,10 +6,10 @@
     /* Mid warm maroon */
     --orange-core: #C94B1A;
     /* Burnt orange for the glow */
-    --bg-gradient: radial-gradient(ellipse 100% 70% at 50% -5%,
-            #A03A14 0%,
-            #521508 50%,
-            #0e0503 80%);
+    --bg-gradient: radial-gradient(ellipse 160% 80% at 50% 100%,
+            #8B3010 0%,
+            #3D0E04 50%,
+            #0a0300 80%);
     --bg-card: rgba(255, 255, 255, 0.06);
     --text-main: #ffffff;
     --text-muted: rgba(255, 255, 255, 0.55);
